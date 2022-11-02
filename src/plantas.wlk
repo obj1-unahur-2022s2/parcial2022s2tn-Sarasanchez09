@@ -41,7 +41,7 @@ class Quinoa {
 class SojaTransgenica inherits Soja{
 	
 	override method daNuevaSemilla()=false
-	method esParcelaIdeal(unaParcela)=unaParcela.cantidadMaxima()==1
+	override method esParcelaIdeal(unaParcela)=unaParcela.cantidadMaxima()==1
 }
 
 class Hierbabuena  inherits Menta{
