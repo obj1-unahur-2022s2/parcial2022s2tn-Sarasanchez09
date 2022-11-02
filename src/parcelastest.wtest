@@ -1,2 +1,33 @@
 import parcelas.*
+import plantas.*
 
+describe"test de parcela"{
+	
+	const parcela1 = new Parcela(ancho=20,largo=1,horasDeSol=8)
+	const soja1 =new Soja (anoDeObtencion=2009,altura=1)
+	const soja2 =new Soja (anoDeObtencion=2009,altura=1)
+	const soja3 =new Soja (anoDeObtencion=2009,altura=1)
+	const soja4 =new Soja (anoDeObtencion=2009,altura=1)
+	
+	method initialize() {
+		
+		
+	}
+
+	test"parcela1 tiene una superfie de 20 m2"{
+		assert.equals(20,parcela1.superficie())
+	}
+	test"parcela1 la cantidad maxima es de 4"{
+		assert.equals(4,parcela1.cantidadMaxima())
+	}
+	
+	test"parcela1 no tiene complicaciones"{
+		parcela1.plantarUnaPlanta(soja1)
+		parcela1.plantarUnaPlanta(soja2)
+		parcela1.plantarUnaPlanta(soja3)
+		parcela1.plantarUnaPlanta(soja4)
+		
+		assert.notThat(parcela1.tieneComplicaciones())
+	}
+	
+}
