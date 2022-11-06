@@ -1,3 +1,7 @@
+/*
+ * Faltó implementar el método masAutosustentable(). Te dejo una posible solución. 
+ */
+
 import plantas.*
 import parcelas.*
 
@@ -17,7 +21,8 @@ object inta{
 	}
 	method cantidadDeParcelas()=parcelas.size()
 	
+	method parcelasConMasDeCuatro() = parcelas.filter({p=>p.tieneMasDeCuatro()})
 	method masAutosustentable(){
-		
+		self.parcelasConMasDeCuatro().max({p=>p.cantidadBienAsociadas()})
 	}
 }

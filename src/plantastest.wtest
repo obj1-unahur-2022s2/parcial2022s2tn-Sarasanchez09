@@ -1,3 +1,12 @@
+/*
+ * Uno de los test de Soja no pasaba, porque le faltaba condición al método
+ * daNuevaSemilla().
+ * 
+ * El método initialize() no hace falta escribirlo si no se van a inicializar
+ * objetos dentro del describe.
+ * 
+ */
+
 import plantas.*
 describe "Test de Plantas"  {
 	
@@ -29,7 +38,7 @@ describe "Test de Plantas de soja"  {
 		assert.equals(7,soja1.horasDeSolTolera())
 	}
 	test"soja1 no da semillas"{
-		assert.that(soja1.daNuevaSemilla())
+		assert.notThat(soja1.daNuevaSemilla())
 	}
 	test"soja1 ocupa 0.3 m2"{
 		assert.equals(0.3,soja1.espacio())
