@@ -1,9 +1,15 @@
+/*
+ * Se corrige nombre de la clase, ya que Parcela es una clase abstracta.
+ * 
+ * El test de tieneComplicaciones() no estaba correcto, te dejo la modificación.
+ */
+
 import parcelas.*
 import plantas.*
 
 describe"test de parcela"{
 	
-	const parcela1 = new Parcela(ancho=20,largo=1,horasDeSol=8)
+	const parcela1 = new ParcelaEcologica(ancho=20,largo=1,horasDeSol=8)
 	const soja1 =new Soja (anoDeObtencion=2009,altura=1)
 	const soja2 =new Soja (anoDeObtencion=2009,altura=1)
 	const soja3 =new Soja (anoDeObtencion=2009,altura=1)
@@ -27,7 +33,7 @@ describe"test de parcela"{
 		parcela1.plantarUnaPlanta(soja3)
 		parcela1.plantarUnaPlanta(soja4)
 		
-		assert.notThat(parcela1.tieneComplicaciones())
+		assert.that(parcela1.tieneComplicaciones())
 	}
 	
 }
